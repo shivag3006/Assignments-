@@ -1,0 +1,50 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+    const App =()=> {
+
+        const data = [
+            {
+                Name:"Shiva",
+                Sno: 1,
+                Marks:90
+            },
+            {
+                Name:"Lally",
+                Sno: 2,
+                Marks:99
+            }
+        ]
+        return(
+            <div>
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Sno</th><th>Name</th><th>Marks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {
+                            data.map(({Sno, Name, Marks}, index)=> {
+                                return <tr key={index}>
+                                            <td>{Sno}</td>
+                                            <td>{Name}</td>
+                                            <td>{Marks}</td>
+                                        </tr>
+                            })
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+</script>

@@ -1,0 +1,134 @@
+1. Why we go for React ?
+	
+
+2. How many min lib required ?
+
+3. which version u used ? 18.3
+
+4. Which hooks u used in you application ?
+
+5. state vs props ?
+
+6. state variable vs normal js varibale
+
+7. conditional rendering
+
+8. how to apply CSS class dynamicall ?
+
+9. how to apply inline styling in React ?
+
+10. Tell me somthing about JSX ?
+
+11. Why we go for context ?
+
+12. how to share the data across all the componet in your applcation ?
+
+13. How you implements context api ?
+
+14. why we go for useContext ?
+
+15. tell me something about useRef ?
+
+16. What is the procedure you are following ?
+
+    dev - test - stage- adoption - production
+
+17.
+
+HTML:
+
+1. inline vs block leve elements ?
+
+2. What is an attributes ?
+
+3. tell me some elements ?
+
+4. What is semantic elements ?
+
+5. what are the new fetures in HTML5 ?
+================================
+
+CSS:
+
+1. how many ways we can apply ?
+
+2. Box modal
+
+3. positions
+
+4. selectors
+
+5. flex
+
+6. grid
+
+7. media queries
+
+8. CSS3 fetures
+==============================
+
+JS
+
+1. variable and functions
+
+2. JSON
+
+3. Array methods
+
+4. String methods
+
+5. OOPS
+
+6. Exception Handling
+
+7. Browser Storages
+
+8. Promises
+
+9. BOM vs DOM
+
+10. Closure, hoisting..etc
+
+===============================
+
+Array methods
+
+Session 1: https://www.youtube.com/watch?v=PBcYaAFU5aw&t=31s
+
+Session 2: https://www.youtube.com/watch?v=CprFHF4ZXn0
+
+
+method -
+
+class A{
+  n1=10
+  f1(){
+  }
+}
+
+function A(){
+    this.n1=10;
+    this.f1=function(){}
+}
+
+funciton vs methods
+
+Array - predefined
+
+variables
+methods
+
+how many ?
+
+==========================
+
+var arr=new Array()
+
+arr - []
+
+==
+
+var arr=[];
+arr - []
+
+=========================

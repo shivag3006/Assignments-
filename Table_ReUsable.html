@@ -1,0 +1,80 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const Table = (props) => {
+        const {ths, data,tds} = props;
+        return (
+            <div>
+                <table border="2px">
+                    <thead>
+                        <tr>
+                            {
+                                ths.map((ele, ind) =>{
+                                    return <th key={ind}>{ele}</th>
+                                })
+                            }
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            {
+                                data.map((obj,index)=>{
+                                    return <tr key={index}>
+                                        {
+                                            tds.map((val,ind)=>{
+                                                return <td key={ind} > {obj[val]} </td>
+                                            })
+                                        }
+                                    </tr>
+                                })
+                            }       
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+    const App = ( ) => {
+        const players = [
+            {
+                name:"Shiva",
+                location:"Hyd",
+                marks:"69"
+
+            }, 
+            {
+                name:"Rammy",
+                location:"Delhi",
+                marks:"85"
+            }
+        ]
+
+        const students = [
+            {
+                s_id:12,
+                s_grade:"A"
+            },
+            {
+                s_id:14,
+                s_grade:"A+"
+            },
+            {
+                s_id:16,
+                s_grade:"O"
+            }
+        ]
+        return(
+            <div>
+                <h1>Players List</h1>
+                <Table tds={["Name", "Location","Marks"]} data={players} ths={["Name", "Location","Marks"]} />
+                <h1>Students Name </h1>
+                <Table tds={["S_Id","S_grade"]} data={students} ths={["S_Id","S_grade"]} />
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+</script>

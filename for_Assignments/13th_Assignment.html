@@ -1,0 +1,27 @@
+<script Src="react.development.js"></script>
+<script Src="react-dom.development.js"></script>
+<script Src="babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel" >
+
+    const App=()=> {
+        return(
+            <div>
+                <p> 
+                    <b> Name: <input  /> </b>
+                </p>
+                <p>
+                    <b>Gender: <input type="radio" name="Gen"/>Male <input type="radio" name=""/>Female </b>
+                </p>
+                <p>
+                    
+                </p>
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+
+</script>

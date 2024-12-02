@@ -1,0 +1,37 @@
+<script src="react.development.js"> </script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+    const App =() => {
+
+        const A =()=> {
+
+            const B =() => {
+                return(
+                    <>
+                    B.Location:
+                    </>
+                )
+            }
+            return(
+                <>
+                A.name:
+                </>
+            )
+        }
+        return(
+            <div>
+                <h1>Name: <input/> </h1>
+                <h2>Location: <input/> </h2>
+                <button>Submit</button>
+            </div>
+        )
+    }
+
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App/>)
+</script>

@@ -1,0 +1,60 @@
+<script Src="react.development.js"></script>
+<script Src="react-dom.development.js"></script>
+<script Src="babel.min.js"></script>
+
+<div id="root"></div>
+
+<style>
+body{
+    width:700px;
+    height:600px;
+    border: 5px solid Black;
+    margin: 15px 330px;
+    border-radius: 3%;
+}
+.boder{
+    width:650px;
+    height: 550px;
+    border: 3px solid red;
+    margin: 20px 20px;
+}
+.ballon{
+    border: 3px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+.active{
+    border: 3px solid green;
+}
+
+</style>
+
+<script type="text/babel">
+
+    const Ballons = (props) => {
+        const { name, size, l, t, isActive, getActiveBallon} = props;
+        const handleClick =(eve)=> {
+            getActiveBallon(eve.target.id)
+        }
+        return(
+            <div id={name} onClick={handleClick} className={`ballon ${isActive ? 'active' : ""}`} style={{width:size, height:size, left:l, top:t}}></div>
+        )
+    }
+
+    const App=()=> {
+        const [activeBallon, setActiveBallon]=React.useState("")
+        const getActiveBallon = (ballonId) => {
+            setActiveBallon(ballonId)
+        }
+        return(
+            <div className="boder">
+                <Ballons getActiveBallon={getActiveBallon} name="bal1"  size="80" l="500" t="40" isActive={activeBallon==='bal1'}/>
+                <Ballons getActiveBallon={getActiveBallon} name="bal2"  size="160" l="250" t="80" isActive={activeBallon==="bal2"}/>
+                <Ballons getActiveBallon={getActiveBallon} name="bal3"  size="80" l="450" t="120" isActive={activeBallon==="bal3"}/>
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+
+</script>

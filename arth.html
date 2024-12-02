@@ -1,0 +1,50 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    function App(){
+
+        function findSum(eve){
+        debugger;   
+        const  no1Ref=  document.querySelector("#root > div > p:nth-child(1) > input")
+        const  no2Ref=  document.querySelector("#root > div > p:nth-child(2) > input")
+        const no1=Number(no1Ref.value)
+        const no2=Number(no2Ref.value)
+        const sum=no1+no2;
+
+        document.querySelector('#root > div > h1').innerText=sum;
+        if(sum <100){
+            document.querySelector('#root > div > h1').style.color="red"
+        }else{
+            document.querySelector('#root > div > h1').style.color="blue"
+
+        }
+        }
+
+       return  <div>
+        <p>
+            <b>No1:</b><input />
+        </p>
+        <p>
+            <b>No2:</b><input />
+        </p>
+        <p>
+            <button  onClick={findSum}  >Sum</button>
+        </p>
+            <h1></h1>
+        </div>
+    }
+
+
+    
+    
+
+
+    const containerRef=document.querySelector("#root")
+    const rootContainer=ReactDOM.createRoot(containerRef);
+    rootContainer.render(<App />)
+
+</script>

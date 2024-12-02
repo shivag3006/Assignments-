@@ -1,0 +1,46 @@
+<script Src="react.development.js"></script>
+<script Src="babel.min.js"></script>
+<script Src="react-dom.development.js"></script>
+
+
+<div id="root"></div>
+
+<style>
+body{
+    width: 500px;
+    height: 400px;
+    border: 3px solid red;
+}
+.left,
+.right{
+    width: 120px;
+    height: 50px;
+    margin-left: 190px;
+    position: relative;
+    top: 125px;
+    border: 2px solid black;
+    display: inline-block;
+    
+}
+</style>
+
+<script type="text/babel">
+
+    const App = () => {
+            const [leftColor, setLeftColor] = React.useState('green')
+            const [rightColor, setRightColor] = React.useState('blue')
+            const hanldeClick = () => {
+                setLeftColor(leftColor === 'green' ? 'blue' : 'green');
+                setRightColor(rightColor === 'green' ? 'blue' : 'green')
+            }
+
+        return (
+            <div>
+                <div onClick={hanldeClick} style={{background:leftColor}} className="left"></div>
+                <div  onClick={hanldeClick}  style={{background:rightColor}} className="right"></div>
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.querySelectorAll("#root")[0])
+    root.render(<App/>)
+</script>

@@ -1,0 +1,46 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+  const App = () => {
+    const [data, setData] = React.useState("");
+    const fnUpload = (eve) => {};
+
+    const handleChange = (eve) => {
+      const file = eve.target.files[0];
+      const { type, size } = file;
+      if (!type.includes("image/")) {
+        alert("please select Image only");
+        return;
+      }
+      if (size > 15000) {
+        alert("file size should not exceed 12mb");
+        return;
+      }
+      const readerObj = new FileReader();
+      readerObj.readAsDataURL(file);
+      readerObj.onload = function () {
+        setData(readerObj.result);
+      };
+      readerObj.onerror = function () {
+        console.log("onerror");
+      };
+    };
+
+    return (
+      <div>
+        <p>
+          {" "}
+          Photo: <input onChange={handleChange} name="photo" type="file" />
+          <img src={data} height="143" width="143" />
+        </p>
+        <button onClick={fnUpload}> Upload</button>
+      </div>
+    );
+  };
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>

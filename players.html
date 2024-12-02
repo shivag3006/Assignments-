@@ -1,0 +1,24 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+
+    function Player(props){
+       return <h1>My name is {props.name}, am from {props['loc']}, my runs are {props.children}.</h1>
+    }
+
+    function App(){
+        return <div>
+            <Player name="Sachin" loc="Mumabi" >20000</Player>
+            <Player name="Dhoni" loc="Ranchi" >15000</Player>
+            <Player name="Kohli" loc="Delhi"  >18000</Player>
+        </div>
+    }
+    const containerRef=document.getElementById("root")
+    const root=ReactDOM.createRoot(containerRef)
+    root.render(<App ></App>)
+</script>

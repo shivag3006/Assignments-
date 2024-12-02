@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    background-color: yellow;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.footer {
+    background-color: yellow;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    font-size: 25px;
+}
+.menu {
+    background-color: rgb(168, 190, 231);
+    list-style-type: none;
+    text-align: right;
+
+}
+.menu > li {
+    display: inline;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}

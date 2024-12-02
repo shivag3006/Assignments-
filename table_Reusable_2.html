@@ -1,0 +1,101 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    const Table = (props) => {
+        const {ths, data, tds, heading} = props;
+        return (
+            <div>
+                <h1>{heading}</h1>
+                <table border="2px">
+                    <thead>
+                        <tr>
+                            {
+                                ths.map((ele, ind) =>{
+                                    return <th key={ind}>{ele}</th>
+                                })
+                            }
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                            {
+                                data.map((obj,index)=>{
+                                    return <tr key={index}>
+                                        {
+                                            tds.map((val,ind)=>{
+                                                return <td key={ind} > {obj[val]} </td>
+                                            })
+                                        }
+                                    </tr>
+                                })
+                            }       
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+    const App = ( ) => {
+        const data = [
+            {
+                heading:"Players List",
+                tds:["Name", "Location","Marks"],
+                ths:["Name", "Location","Marks"],
+                rows: [
+                    {
+                        name:"Shiva",
+                        location:"Hyd",
+                        marks:"69",
+    
+                    },
+                    {
+                        name:"Rammy",
+                        location:"Delhi",
+                        marks:"85",
+                    }
+                ]
+            },
+        
+            {
+                heading:"Students Name",
+                tds:["S_Id","S_grade"],
+                ths:["S_Id","S_grade"],
+                rows:[
+                    {
+                        s_id:12,
+                        s_grade:"A"
+                    },
+                    {
+                        s_id:14,
+                        s_grade:"A+"
+                    },
+                    {
+                        s_id:16,
+                        s_grade:"O"
+                    }
+                ]
+
+            }
+        ]
+
+        return(
+            <div>
+                {
+                    data.map((obj,ind)=> {
+                        return <Table 
+                            heading={heading}
+                            tds={tds} 
+                            data={rows} 
+                            ths={ths} />
+                    })
+                }
+                
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+</script>

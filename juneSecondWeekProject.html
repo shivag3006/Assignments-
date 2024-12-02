@@ -1,0 +1,81 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<link href="juneSecondweekProject.css" rel="stylesheet" >
+
+<div id="root"></div>
+
+<script type="text/babel">
+
+    const Footer = () => {
+        return (
+            <div className="footer"> &copy;  rights are Aplicabale.
+            </div>
+        )
+    }
+                               //Menu Compounent //
+    const Menu = () => {
+        const [menuItem, setMenuItem]=React.useState("Home")
+        const handleClick = (eve) => {
+            setMenuItem(eve.target.innerText)
+        }
+        return(
+            <div>
+                <ul className="menu">
+                    {menuItem}
+                    <li onClick={handleClick} > Home</li>
+                    <li onClick={handleClick} > About</li>
+                    <li onClick={handleClick} > Contact</li>
+                </ul>
+            </div>
+        )
+    }
+        const Home = () => {
+            return(
+                <div>
+                    <h1>Home Compounent</h1>
+                </div>
+            )
+        }
+        const About = () => {
+            return(
+                <div>
+                    <h1>About Compounent</h1>
+                </div>
+            )
+        }
+        const Contact = () => {
+            return(
+                <div>
+                    <h1>Contact Compounent</h1>
+                </div>
+            )
+        }
+                                /* Header Compounent */
+    const Header  = () => {
+        return(
+            <div>
+                <p className="header"> AOP Productions & Exhibition </p>
+            </div>
+        )
+    }
+
+    const App = () => {
+        return (
+            <div> 
+                < Header />
+                < Menu />
+                < Home />
+                < About />
+                < Contact />
+                < Footer />
+            </div>
+        )
+
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App/>)
+
+</script>
+

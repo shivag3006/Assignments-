@@ -1,0 +1,95 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js" ></script>
+
+<style>
+    .c1{
+        border: 2px solid red;
+        width: 242px;
+        height: 220;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 210px;
+        position: absolute;
+        left: 300px;
+        top: 183px; 
+    }
+    .c2{
+        border: 2px solid #197c02;
+        width: 220px;
+        height: 200px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 200px;
+        position: absolute;
+        left: 500px;
+        top: 283px; 
+    }
+    .c3{
+    border: 2px solid blue;
+    height: 150px;
+    width: 143px;
+    border-radius: 50%;
+    text-align: -webkit-center;
+    line-height: 150px;
+    position: absolute;
+    left: 680px;
+    top: 383px;
+    }
+
+</style>
+
+<div id="root"></div>
+
+
+
+<!--===========================Code Simple Example===================================> 
+<script type="text/babel">  
+
+    const Circle1 = (props) => {
+        return <div className="c1">{props.data} </div>
+       } 
+       const Circle2 = (props) => {
+            return <div className="c2"> {props.data} </div>
+            }
+            const Circle3 = (props) => {
+                return <div className="c3"> {props.data} </div>
+                }
+
+            const App =() => {
+                return (
+                    <div>
+                        
+                        <Circle1 data="1"/>
+                        <Circle2 data="4"/>
+                        <Circle3 data="3"/>
+
+                    </div>
+                );
+            };
+
+        const root=ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App/>)
+</script> -->
+
+<!-- =========================An Other Example for Short Code================================= -->
+
+<script type="text/babel">
+
+    const Circle = (props) =>{
+        return <div className={props.className}> {props.data} </div>
+    }
+
+    const App = () => {
+        return(
+            <div>
+                <Circle data="3" className="c1" />
+                <Circle data="2" className="c2" />
+                <Circle data="1" className="c3" />
+            </div>
+        )
+    }
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App/>)
+
+</script>

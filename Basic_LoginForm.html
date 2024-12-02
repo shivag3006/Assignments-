@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation Example</title>
+  <style>
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Validation Example</h2>
+  <form id="exampleForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <img id="usernameStatus" src="" alt="" style="display: none;">
+      <span id="usernameError" class="error"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <img id="emailStatus" src="" alt="" style="display: none;">
+      <span id="emailError" class="error"></span>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("exampleForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      let isValid = true;
+
+      // Username Validation
+      const usernameInput = document.getElementById("username");
+      const usernameStatus = document.getElementById("usernameStatus");
+      const usernameError = document.getElementById("usernameError");
+      if (usernameInput.value.length < 3) {
+        usernameError.textContent = "Username must be at least 3 characters.";
+        usernameStatus.src = "https://cdn-icons-png.flaticon.com/512/753/753345.png";
+        usernameStatus.style.display = "inline";
+        isValid = false;
+      } else {
+        usernameError.textContent = "";
+        usernameStatus.src = "https://cdn-icons-png.flaticon.com/512/845/845646.png";
+        usernameStatus.style.display = "inline";
+      }
+
+      // Email Validation
+      const emailInput = document.getElementById("email");
+      const emailStatus = document.getElementById("emailStatus");
+      const emailError = document.getElementById("emailError");
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      if (!emailPattern.test(emailInput.value)) {
+        emailError.textContent = "Please enter a valid email.";
+        emailStatus.src = "https://cdn-icons-png.flaticon.com/512/753/753345.png";
+        emailStatus.style.display = "inline";
+        isValid = false;
+      } else {
+        emailError.textContent = "";
+        emailStatus.src = "https://cdn-icons-png.flaticon.com/512/845/845646.png";
+        emailStatus.style.display = "inline";
+      }
+
+      if (isValid) {
+        alert("Form submitted successfully!");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<script src="react.development.js"></script>
+<script src="babel.min.js"></script>
+<script src="react-dom.development.js"></script>
+
+<style>
+  .box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    display: inline-block;
+    text-align: center;
+    line-height: 100px;
+  }
+</style>
+
+<div id="root"></div>
+
+
+<script type="text/babel">
+
+    function Box(a){
+        return <div className="box">{a.name}</div>
+    }
+
+    function App(){
+        return <div>
+            <div><Box name="Sachin" /><Box name="Dhoni" /></div>
+            <div><Box name="kohli" /><Box name="UV" /></div>
+        </div>
+    }
+
+    const root=ReactDOM.createRoot(document.getElementById("root"))
+    root.render(<App />)
+</script>
